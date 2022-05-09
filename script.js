@@ -3,6 +3,22 @@
 
 var generateBtn = document.querySelector("#generate");
 
+
+var userChoiceLength = window.prompt("Please choose number of characters between 5 and 138:");
+console.log(userChoiceLength);
+
+var userChoiceLower = window.prompt("Do you wish to have lowercase letters included in your password?:  yes / no");
+console.log(userChoiceLower);
+
+var userChoiceUpper = window.prompt("Do you wish to have uppercase letters included in your password?:  yes / no");
+console.log(userChoiceUpper);
+
+var userChoiceNumber = window.prompt("Do you wish to have numbers included in your password?:  yes / no");
+console.log(userChoiceNumber);
+
+var userChoiceSymbol = window.prompt("Do you wish to have symbols included in your password?:  yes / no");
+console.log(userChoiceSymbol);
+
 var userOptions = ["yes", "no"];
 
 const randomFunc = {
@@ -21,40 +37,11 @@ function writePassword() {
     var passwordText = document.querySelector("#password");
 
     passwordText.value = password;
-
 }
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword); 
 
-
-//generateEl.addEventListener("click", () => {
-    //    const length = +lengthEl.value;
-    //    const hasLower = lowercaseEl.checked;
-    //    const hasUpper = uppercaseEl.checked;
-    //    const hasNumber = numberEl.checked;
-    //    const hasSymbol = symbolsEl.checked;
-//})
-
-//alert ("Generate Password"); 
-prompt("Please choose number of characters between 5 and 138:");
-
-prompt("Do you wish to have lowercase letters included in your password?:  yes / no");
-console.log(userOptions);
-//preventDefault()
-
-prompt("Do you wish to have uppercase letters included in your password?:  yes / no");
-console.log(userOptions);
-//preventDefault()
-
-prompt("Do you wish to have numbers included in your password?:  yes / no");
-console.log(userOptions);
-//preventDefault()
-
-prompt("Do you wish to have symbols included in your password?:  yes / no");
-console.log(userOptions);
-
-//
 
 function getRandomLower() {
     return String.fromCharCode(Math.floor(Math.random() * 26) + 97);
@@ -73,16 +60,44 @@ console.log(getRandomNumber);
 
 function getRandomSymbol() {
     const symbol = "!@#$%^&*"; 
-    return symbols[Math.floor(Math.random() * symbols.length)];
+    return symbol[Math.floor(Math.random() * symbol.length)];
 }
 console.log(getRandomSymbol);
 
+//generateEl.addEventListener("click", () => {
+    //    const length = +lengthEl.value;
+    //    const hasLower = lowercaseEl.checked;
+    //    const hasUpper = uppercaseEl.checked;
+    //    const hasNumber = numberEl.checked;
+    //    const hasSymbol = symbolsEl.checked;
+//})
+
+//generateEl.innerText - generatePassword(
+//    hasLower,
+//    hasUpper,
+//    hasNumber,
+//    hasSymbol,
+//    length
+//);
+
+
+//function generatePassword(lower, upper, number, symbol, length) {
+    //1. init pw var
+    //2. filter out unselected types
+    //3. loop over the length call generator function for each type 
+    //4. add the final password to the pw var and return 
+//    let generatedPassword = "";
+//    const typesCount = lower + upper + number + symbol;
+
+//    console.log("typesCounty: ", typesCount);
+
+//    const typesArr = [lower, upper, number, symbol];
+
+//    console.log("typesArr: ", typesArr);
+//}
+
+
 //
-
-
-
-
-
 
 //var characterAmount = window.prompt("Please choose number of characters between 5 and 138:")
 
